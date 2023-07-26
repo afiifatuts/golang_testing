@@ -1,0 +1,13 @@
+mode: set
+github.com/afiifatuts/golang-testing/car.go:7.35,11.2 1 0
+github.com/afiifatuts/golang-testing/car.go:17.26,19.29 2 1
+github.com/afiifatuts/golang-testing/car.go:19.29,21.3 1 1
+github.com/afiifatuts/golang-testing/car.go:22.2,22.41 1 1
+github.com/afiifatuts/golang-testing/car.go:22.41,24.3 1 1
+github.com/afiifatuts/golang-testing/car.go:25.2,25.21 1 1
+github.com/afiifatuts/golang-testing/car.go:30.39,32.2 1 1
+github.com/afiifatuts/golang-testing/car.go:36.37,38.2 1 1
+github.com/afiifatuts/golang-testing/math.go:3.28,4.13 1 1
+github.com/afiifatuts/golang-testing/math.go:4.13,6.3 1 1
+github.com/afiifatuts/golang-testing/math.go:7.2,7.12 1 1
+github.com/afiifatuts/golang-testing/math.go:10.24,12.2 1 1
