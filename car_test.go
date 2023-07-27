@@ -98,13 +98,44 @@ func (m MockEngine) MaxSpeed() int {
 }
 
 func TestCar_Speed_WithMock(t *testing.T) {
-	mock := new(MockEngine)
-	car := Car{
-		Speeder: mock,
-	}
+	t.Run("called one", func(t *testing.T) {
+		mock := new(MockEngine)
+		car := Car{
+			Speeder: mock,
+		}
 
-	mock.On("MaxSpeed").Return(9)
+		mock.On("MaxSpeed").Return(8).Times(1) //-> berapa kali test dipanggil(verifikasi)
 
-	speed := car.Speed()
-	assert.Equal(t, 20, speed)
+		speed := car.Speed()
+		assert.Equal(t, 20, speed)
+		mock.AssertExpectations(t)
+		//mock.AssertNumberOfCalls(t,"MaxSpeed",1)//-> berapa kali test dipanggil
+
+	})
+	t.Run("called two", func(t *testing.T) {
+		mock := new(MockEngine)
+		car := Car{
+			Speeder: mock,
+		}
+
+		mock.On("MaxSpeed").Return(90).Times(2) //-> berapa kali test dipanggil(verifikasi)
+
+		speed := car.Speed()
+		assert.Equal(t, 80, speed)
+		mock.AssertExpectations(t)
+
+	})
+	t.Run("called three", func(t *testing.T) {
+		mock := new(MockEngine)
+		car := Car{
+			Speeder: mock,
+		}
+
+		mock.On("MaxSpeed").Return(60).Times(3) //-> berapa kali test dipanggil(verifikasi)
+
+		speed := car.Speed()
+		assert.Equal(t, 60, speed)
+		mock.AssertExpectations(t)
+
+	})
 }
